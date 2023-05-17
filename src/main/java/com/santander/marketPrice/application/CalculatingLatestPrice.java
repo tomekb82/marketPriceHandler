@@ -21,6 +21,7 @@ public class CalculatingLatestPrice {
         this.repository = repository;
     }
 
+    // INFO: finally this method should be transactional (after implementing persistence adapters, jpa etc.)
     public void calculate(String message) {
         try {
             repository.deleteAll();
