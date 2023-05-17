@@ -12,7 +12,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestMessageConverter implements MessageConverter{
+class TestMessageConverter implements MessageConverter{
 
     @Override
     public PriceList convert(String message) throws IOException {

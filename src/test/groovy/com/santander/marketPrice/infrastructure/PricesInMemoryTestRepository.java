@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class PricesInMemoryTestRepository implements Prices {
+class PricesInMemoryTestRepository implements Prices {
 
     Map<String, Price> prices = new HashMap<>();
 
     @Override
     public void save(Price price) {
-        prices.put(price.instrumentName().name(), price);
+        prices.put(price.instrumentName(), price);
     }
 
     @Override

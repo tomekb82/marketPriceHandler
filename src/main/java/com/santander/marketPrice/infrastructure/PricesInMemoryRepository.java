@@ -14,7 +14,7 @@ class PricesInMemoryRepository implements Prices {
 
     @Override
     public void save(Price price) {
-        prices.put(price.instrumentName().name(), price);
+        prices.put(price.instrumentName(), price);
     }
 
     @Override

@@ -21,10 +21,10 @@ class CsvMessageConverterTest extends Specification {
             PriceList result = messageConverter.convert(message)
         then:
             result.prices.size() == 5
-            result.prices.get(0).priceId().id() == "106"
-            result.prices.get(0).instrumentName().name() == "EUR/USD"
-            result.prices.get(0).bid().sellPrice() == new BigDecimal("1.1000")
-            result.prices.get(0).ask().buyPrice()== new BigDecimal("1.2000")
+            result.prices.get(0).priceId() == "106"
+            result.prices.get(0).instrumentName() == "EUR/USD"
+            result.prices.get(0).bid() == new BigDecimal("1.1000")
+            result.prices.get(0).ask() == new BigDecimal("1.2000")
             Price.convertDate(result.prices.get(0).fromDate()) == "01-06-2020 12:01:01:001"
 
 

@@ -6,7 +6,6 @@ import com.santander.marketPrice.domain.PriceList;
 import com.santander.marketPrice.domain.Prices;
 
 import java.util.Map;
-import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -27,7 +26,7 @@ public class CalculatingLatestPrice {
             Map<String, Price> groupedPrices = messageConverter.convert(message).getPrices()
                     .stream()
                     .map(Price::adjust)
-                    .collect(Collectors.toMap(price -> price.instrumentName().name(),
+                    .collect(Collectors.toMap(Price::instrumentName,
                             price -> price,
                             Price::getLatest));
             groupedPrices.values().forEach(repository::save);
@@ -39,9 +38,5 @@ public class CalculatingLatestPrice {
 
     public PriceList getAll(){
         return repository.getAll();
-    }
-
-    public Optional<Price> getByInstrumentName(String type) {
-        return repository.getByInstrumentType(type);
     }
 }

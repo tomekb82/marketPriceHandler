@@ -46,7 +46,7 @@ class PriceTest extends Specification {
         when:
             Price result = price.adjust()
         then:
-            result.bid().sellPrice() == bid.sellPrice().subtract(bid.sellPrice().multiply(BigDecimal.valueOf(0.1)).divide(new BigDecimal("100.0")))
-            result.ask().buyPrice() == ask.buyPrice().add(ask.buyPrice().multiply(BigDecimal.valueOf(0.1)).divide(new BigDecimal("100.0")))
+            result.bid() == bid.sellPrice().subtract(bid.sellPrice().multiply(BigDecimal.valueOf(0.1)).divide(new BigDecimal("100.0")))
+            result.ask() == ask.buyPrice().add(ask.buyPrice().multiply(BigDecimal.valueOf(0.1)).divide(new BigDecimal("100.0")))
     }
 }

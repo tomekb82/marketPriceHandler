@@ -52,17 +52,18 @@ public class Price {
         return new Price(priceId, instrumentName, bidAdjusted, askAdjusted, from);
     }
 
-    public PriceId priceId() {
-        return priceId;
+    public String priceId() {
+        return priceId.id();
     }
-    public InstrumentName instrumentName() {
-        return instrumentName;
+    public String instrumentName() {
+        return instrumentName.name();
     }
-    public Bid bid() {
-        return bid;
+
+    public BigDecimal bid() {
+        return bid.sellPrice();
     }
-    public Ask ask() {
-        return ask;
+    public BigDecimal ask() {
+        return ask.buyPrice();
     }
     public FromDate fromDate() {
         return from;

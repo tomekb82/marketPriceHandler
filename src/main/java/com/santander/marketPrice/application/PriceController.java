@@ -2,20 +2,17 @@ package com.santander.marketPrice.application;
 
 import com.santander.marketPrice.domain.Price;
 import com.santander.marketPrice.domain.PriceList;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.springframework.http.ResponseEntity.notFound;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
-public class PriceController {
+class PriceController {
 
     CalculatingLatestPrice calculatingLatestPrice;
 
@@ -36,10 +33,10 @@ public class PriceController {
         String from;
 
         public PriceDto(Price price) {
-            this.priceId = price.priceId().id();
-            this.instrumentName = price.instrumentName().name();
-            this.bid = price.bid().sellPrice();
-            this.ask = price.ask().buyPrice();
+            this.priceId = price.priceId();
+            this.instrumentName = price.instrumentName();
+            this.bid = price.bid();
+            this.ask = price.ask();
             this.from = Price.convertDate(price.fromDate());
         }
 
