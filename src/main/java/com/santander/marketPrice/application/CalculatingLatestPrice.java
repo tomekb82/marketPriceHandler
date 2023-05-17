@@ -23,6 +23,7 @@ public class CalculatingLatestPrice {
 
     public void calculate(String message) {
         try {
+            repository.deleteAll();
             Map<String, Price> groupedPrices = messageConverter.convert(message).getPrices()
                     .stream()
                     .map(Price::adjust)

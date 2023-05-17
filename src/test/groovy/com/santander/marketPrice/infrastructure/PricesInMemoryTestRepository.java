@@ -20,4 +20,9 @@ class PricesInMemoryTestRepository implements Prices {
     public PriceList getAll() {
         return new PriceList(prices.values().stream().toList());
     }
+
+    @Override
+    public void deleteAll() {
+        prices.clear();
+    }
 }

@@ -5,4 +5,6 @@ public interface Prices {
     void save(Price price);
 
     PriceList getAll();
+
+    void deleteAll();
 }
