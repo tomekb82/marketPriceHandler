@@ -3,7 +3,6 @@ package com.santander.marketPrice.domain;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 public class Price {
     PriceId priceId;

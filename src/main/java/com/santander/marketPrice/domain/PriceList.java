@@ -7,7 +7,7 @@ public class PriceList {
     List<Price> prices;
 
     public PriceList(List<Price> prices) {
-        if (prices.size() == 0){
+        if (prices.size() == 0) {
             throw new IllegalArgumentException("Error: each message should have 1 or more lines in it");
         }
         this.prices = prices;

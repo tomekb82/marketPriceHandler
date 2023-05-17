@@ -6,7 +6,6 @@ import com.santander.marketPrice.domain.Prices;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 class PricesInMemoryRepository implements Prices {
 
@@ -15,11 +14,6 @@ class PricesInMemoryRepository implements Prices {
     @Override
     public void save(Price price) {
         prices.put(price.instrumentName(), price);
-    }
-
-    @Override
-    public Optional<Price> getByInstrumentType(String type) {
-        return Optional.ofNullable(prices.get(type));
     }
 
     @Override
